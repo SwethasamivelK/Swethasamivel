@@ -102,11 +102,12 @@ nav a:hover{
   font-size:18px;
   color: var(--muted);
   max-width:520px;
+  margin-bottom:30px; /* spacing between hero text and button */
 }
 
 .btn{
   display:inline-block;
-  margin-top:30px;
+  margin-top:10px;
   padding:14px 28px;
   background: var(--gradient);
   border-radius:8px;
@@ -130,19 +131,21 @@ nav a:hover{
 /* === Sections === */
 .section{
   background: var(--section);
-  border-radius:15px;
-  padding:100px 20px 80px;
-  margin:50px auto;
+  border-radius: 15px;
+  padding: 100px 20px 80px; /* top 100px, bottom 80px */
+  margin: 80px auto; /* spacing between sections */
   max-width:1200px;
   box-shadow:0 0 50px rgba(124,58,237,0.1);
   border:1px solid rgba(124,58,237,0.15);
 }
 
+/* Section Headings */
 h2{
   font-size:32px;
-  margin-bottom:40px;
+  margin-bottom:50px; /* space between heading and cards */
   color: var(--headline);
   position:relative;
+  text-align:center; /* align header centrally above content */
 }
 
 h2::after{
@@ -152,18 +155,21 @@ h2::after{
   height:3px;
   background: var(--gradient);
   border-radius:2px;
-  margin-top:8px;
+  margin:8px auto 0;
 }
 
-/* === Cards === */
+/* === Cards / Services Cards === */
 .card, .service-card{
   background: var(--card);
-  padding:30px;
+  padding:40px 30px 30px; /* more top padding for spacing */
   border-radius:16px;
-  margin-bottom:25px;
+  margin-bottom:30px;
   border:1px solid rgba(124,58,237,0.2);
   box-shadow:0 8px 30px rgba(124,58,237,0.15);
-  transition:0.3s;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover, .service-card:hover{
@@ -173,6 +179,8 @@ h2::after{
 
 .card p, .service-desc{
   color: var(--muted);
+  margin-bottom:24px; /* spacing between text and button */
+  line-height:1.6;
 }
 
 /* === Services Section === */
@@ -196,7 +204,7 @@ h2::after{
 
 .services-grid{
   display:grid;
-  gap:30px;
+  gap:40px; /* more spacing between cards */
   grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
 }
 
@@ -220,6 +228,8 @@ h2::after{
 }
 
 .service-btn{
+  margin-top:auto; /* ensures button stays at bottom */
+  align-self:center; /* center button horizontally */
   display:inline-block;
   padding:10px 28px;
   font-size:15px;
@@ -243,7 +253,7 @@ h2::after{
   100% {background-position:0% 50%;}
 }
 
-/* === Skills / Icons / Social === */
+/* Social Icons */
 .social-icons a{
   margin-right:15px;
   font-size:20px;
@@ -255,7 +265,7 @@ h2::after{
   color:#EC4899;
 }
 
-/* === Animation for fade === */
+/* Fade Animation */
 .fade{
   opacity:0;
   transform:translateY(30px);
@@ -267,7 +277,7 @@ h2::after{
   transform:translateY(0);
 }
 
-/* === Footer === */
+/* Footer */
 footer{
   text-align:center;
   padding:60px 0;
