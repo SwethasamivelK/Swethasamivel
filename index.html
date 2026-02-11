@@ -9,8 +9,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-
-/* ===== YOUR COLOR SYSTEM ===== */
 :root{
   --bg: #0B0F1A;
   --surface: #121826;
@@ -19,7 +17,7 @@
   --gradient: linear-gradient(90deg, #7C3AED, #EC4899, #06B6D4);
 }
 
-/* ===== GLOBAL ===== */
+/* GLOBAL */
 *{
   margin:0;
   padding:0;
@@ -29,77 +27,94 @@
 }
 
 body{
-  background:#0B0F1A; /* FORCE */
-  color:#F8FAFC;
+  background: var(--bg);
+  color: var(--headline);
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 nav{
   position:fixed;
   width:100%;
   top:0;
-  background:#0B0F1A;
+  background: rgba(11,15,26,0.85);
   padding:20px 60px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.1);
   z-index:1000;
 }
 
 nav strong{
-  color:#F8FAFC;
+  color: var(--headline);
 }
 
 nav a{
   text-decoration:none;
-  color:#94A3B8;
+  color: var(--muted);
   margin-left:25px;
   font-weight:500;
   transition:0.3s;
 }
 
 nav a:hover{
-  color:#F8FAFC;
+  color: var(--headline);
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 .section{
   max-width:1100px;
   margin:auto;
   padding:120px 20px 100px;
+  background: var(--surface);
+  border-radius:15px;
+  margin-bottom:40px;
+  box-shadow: 0 0 40px rgba(124,58,237,0.1);
+  border:1px solid rgba(255,255,255,0.05);
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   height:100vh;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:60px;
+  padding:0 20px;
 }
 
 .hero-text h1{
   font-size:58px;
   font-weight:800;
-  background:linear-gradient(90deg, #7C3AED, #EC4899, #06B6D4);
+  background: var(--gradient);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  position:relative;
+}
+
+.hero-text h1::after{
+  content:"";
+  display:block;
+  height:4px;
+  width:60px;
+  background: var(--gradient);
+  margin-top:12px;
+  border-radius:2px;
 }
 
 .hero-text p{
   margin-top:20px;
   font-size:18px;
-  color:#94A3B8;
+  color: var(--muted);
   max-width:520px;
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON */
 .btn{
   display:inline-block;
   margin-top:30px;
   padding:14px 28px;
-  background:linear-gradient(90deg, #7C3AED, #EC4899);
+  background: var(--gradient);
   border-radius:8px;
   color:white;
   text-decoration:none;
@@ -113,56 +128,67 @@ nav a:hover{
   box-shadow:0 0 30px rgba(236, 72, 153, 0.6);
 }
 
-/* ===== IMAGE ===== */
+/* HERO IMAGE */
 .hero-img img{
   width:340px;
-  border-radius:18px;
-  box-shadow:0 0 40px rgba(124, 58, 237, 0.4);
+  border-radius:20px;
+  box-shadow:0 0 50px rgba(124,58,237,0.5);
 }
 
-/* ===== SECTION HEADINGS ===== */
+/* HEADINGS */
 h2{
-  font-size:30px;
-  margin-bottom:30px;
-  color:#F8FAFC;
+  font-size:32px;
+  margin-bottom:25px;
+  color: var(--headline);
+  position:relative;
 }
 
-/* ===== CARDS ===== */
+h2::after{
+  content:"";
+  display:block;
+  width:50px;
+  height:3px;
+  background: var(--gradient);
+  border-radius:2px;
+  margin-top:8px;
+}
+
+/* CARDS */
 .card{
-  background:#121826; /* SURFACE COLOR */
+  background: #1A1F33; /* slightly different than surface */
   padding:30px;
-  border-radius:14px;
+  border-radius:16px;
   margin-bottom:25px;
-  border:1px solid rgba(255,255,255,0.05);
+  border:1px solid rgba(124,58,237,0.2);
+  box-shadow:0 8px 30px rgba(124,58,237,0.1);
   transition:0.3s;
 }
 
 .card:hover{
-  border:1px solid #7C3AED;
-  box-shadow:0 0 25px rgba(124,58,237,0.2);
   transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(124,58,237,0.3);
 }
 
 .card p{
-  color:#94A3B8;
+  color: var(--muted);
 }
 
-/* ===== SKILLS ===== */
+/* SKILLS */
 .skills span{
   display:inline-block;
   padding:8px 14px;
   margin:6px 6px 0 0;
   border-radius:20px;
   font-size:14px;
-  background:#1E293B;
-  color:#94A3B8;
+  background:#252B44;
+  color: var(--muted);
 }
 
-/* ===== SOCIAL ===== */
+/* SOCIAL ICONS */
 .social-icons a{
   margin-right:15px;
   font-size:20px;
-  color:#94A3B8;
+  color: var(--muted);
   transition:0.3s;
 }
 
@@ -170,7 +196,7 @@ h2{
   color:#EC4899;
 }
 
-/* ===== ANIMATION ===== */
+/* ANIMATION */
 .fade{
   opacity:0;
   transform:translateY(30px);
@@ -182,14 +208,14 @@ h2{
   transform:translateY(0);
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   text-align:center;
   padding:60px 0;
-  color:#94A3B8;
+  color: var(--muted);
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:900px){
   .hero{
     flex-direction:column;
@@ -199,7 +225,6 @@ footer{
 
 </style>
 </head>
-
 <body>
 
 <nav>
