@@ -58,6 +58,8 @@
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       position: relative;
       overflow: hidden;
+      opacity: 0; /* start hidden for animation */
+      transform: translateY(30px);
     }
 
     .service-card:hover {
@@ -113,28 +115,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* ================== Animations ================== */
-    .animated {
-      opacity: 0;
-      transform: translateY(20px);
-      animation-fill-mode: forwards;
-    }
-
-    .fade-up {
-      animation-name: fadeUp;
-      animation-duration: 0.8s;
-      animation-timing-function: ease-out;
-    }
-
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .services-grid .animated { animation-delay: 0s; }
-    .services-grid .animated:nth-child(2) { animation-delay: 0.2s; }
-    .services-grid .animated:nth-child(3) { animation-delay: 0.4s; }
-
     @media (max-width: 480px) {
       .services-title { font-size: 28px; }
       .service-name { font-size: 20px; }
@@ -157,10 +137,7 @@
       width: 120px;
       border-radius: 16px;
       margin-bottom: 15px;
-      opacity: 0;
-      transition: opacity 0.25s;
     }
-    .footer-logo:hover { opacity: 1; }
 
     .footer-social a {
       margin: 0 12px;
@@ -179,23 +156,7 @@
       font-size: 14px;
       margin-top: 14px;
       color: #64748B;
-      opacity: 0;
     }
-
-    .animated-footer {
-      opacity: 0;
-      transform: translateY(20px);
-      animation-fill-mode: forwards;
-    }
-    .fade-up-footer {
-      animation-name: fadeUp;
-      animation-duration: 0.8s;
-      animation-timing-function: ease-out;
-    }
-
-    .footer-brand.animated-footer { animation-delay: 0s; }
-    .footer-social.animated-footer { animation-delay: 0.2s; }
-    .footer-copy.animated-footer { animation-delay: 0.4s; }
 
     @media (max-width: 480px) {
       .footer-social a { font-size: 20px; margin: 0 8px; }
@@ -209,24 +170,45 @@
   <section id="services" class="services-section">
     <h2 class="services-title">Services</h2>
     <div class="services-grid">
-      <div class="service-card animated fade-up">
+      <div class="service-card">
         <i class="fas fa-chart-line service-icon"></i>
-        <h3 class="service-name">Social Media Marketing</h3>
-        <p class="service-desc">Organic social strategy, content planning, community growth & engagement.</p>
+        <h3 class="service-name">Social Media Strategy</h3>
+        <p class="service-desc">Develop content calendars, social campaigns, and growth strategies.</p>
         <a href="#" class="service-btn">Learn More</a>
       </div>
 
-      <div class="service-card animated fade-up">
-        <i class="fas fa-user-friends service-icon"></i>
-        <h3 class="service-name">Influencer Marketing</h3>
-        <p class="service-desc">Partner with creators to amplify campaigns and reach targeted audiences.</p>
+      <div class="service-card">
+        <i class="fas fa-bullhorn service-icon"></i>
+        <h3 class="service-name">Content Creation</h3>
+        <p class="service-desc">Create posts, reels, graphics, and copy aligned with brand voice.</p>
         <a href="#" class="service-btn">Learn More</a>
       </div>
 
-      <div class="service-card animated fade-up">
-        <i class="fas fa-handshake service-icon"></i>
-        <h3 class="service-name">Brand Partnerships</h3>
-        <p class="service-desc">Strategic collaborations that drive visibility and long-term growth.</p>
+      <div class="service-card">
+        <i class="fas fa-chart-pie service-icon"></i>
+        <h3 class="service-name">Analytics & Reporting</h3>
+        <p class="service-desc">Monitor KPIs and optimize campaigns for maximum ROI.</p>
+        <a href="#" class="service-btn">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-users service-icon"></i>
+        <h3 class="service-name">Community Management</h3>
+        <p class="service-desc">Engage audiences, respond to messages, and build customer relationships.</p>
+        <a href="#" class="service-btn">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-bullseye service-icon"></i>
+        <h3 class="service-name">Influencer Partnerships</h3>
+        <p class="service-desc">Collaborate with influencers to amplify campaigns and brand reach.</p>
+        <a href="#" class="service-btn">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-lightbulb service-icon"></i>
+        <h3 class="service-name">Campaign Consulting</h3>
+        <p class="service-desc">Provide strategic advice on social launches, collaborations, and paid promotions.</p>
         <a href="#" class="service-btn">Learn More</a>
       </div>
     </div>
@@ -234,39 +216,35 @@
 
   <!-- ================== Footer Section ================== -->
   <footer class="footer-section">
-    <div class="footer-brand animated-footer fade-up-footer">
+    <div class="footer-brand">
       <img src="profile.jpg" alt="Your Logo" class="footer-logo">
     </div>
-
-    <div class="footer-social animated-footer fade-up-footer">
+    <div class="footer-social">
       <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
     </div>
-
-    <p class="footer-copy animated-footer fade-up-footer">© 2026 Your Name All Rights Reserved</p>
+    <p class="footer-copy">© 2026 Your Name All Rights Reserved</p>
   </footer>
 
-  <!-- ================== Footer Animations ================== -->
+  <!-- ================== Animations Script ================== -->
   <script>
-    const footerElements = document.querySelectorAll('.animated-footer');
-    footerElements.forEach(el => {
-      el.classList.add('fade-up-footer');
-      el.style.animationPlayState = 'running';
-    });
-
-    // Optional: Animate services on scroll
-    const faders = document.querySelectorAll('.fade-up');
+    // Animate service cards on scroll with staggered delays
+    const serviceCards = document.querySelectorAll('.service-card');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.animationPlayState = 'running';
-          entry.target.style.opacity = 1;
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
+          entry.target.style.transition = 'all 0.6s ease';
         }
       });
+    }, { threshold: 0.2 });
+
+    serviceCards.forEach((card, index) => {
+      card.style.transitionDelay = `${index * 0.15}s`;
+      observer.observe(card);
     });
-    faders.forEach(el => observer.observe(el));
   </script>
 
 </body>
