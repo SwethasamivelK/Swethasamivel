@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swetha Samivel | Social Media Manager</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-:root {
+
+/* ===== YOUR COLOR SYSTEM ===== */
+:root{
   --bg: #0B0F1A;
   --surface: #121826;
   --headline: #F8FAFC;
@@ -17,180 +19,191 @@
   --gradient: linear-gradient(90deg, #7C3AED, #EC4899, #06B6D4);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth;
+/* ===== GLOBAL ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+  scroll-behavior:smooth;
 }
 
-body {
-  background: var(--bg);
-  color: var(--headline);
+body{
+  background:#0B0F1A; /* FORCE */
+  color:#F8FAFC;
 }
 
-/* NAVIGATION */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(11,15,26,0.7);
-  backdrop-filter: blur(12px);
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:#0B0F1A;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  z-index:1000;
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--muted);
-  margin-left: 25px;
-  font-weight: 500;
-  transition: 0.3s;
+nav strong{
+  color:#F8FAFC;
 }
 
-nav a:hover {
-  color: white;
+nav a{
+  text-decoration:none;
+  color:#94A3B8;
+  margin-left:25px;
+  font-weight:500;
+  transition:0.3s;
 }
 
-/* SECTIONS */
-.section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 120px 20px 100px;
+nav a:hover{
+  color:#F8FAFC;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
+/* ===== SECTIONS ===== */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:120px 20px 100px;
 }
 
-.hero-text h1 {
-  font-size: 56px;
-  font-weight: 800;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
 }
 
-.hero-text p {
-  margin-top: 20px;
-  font-size: 18px;
-  color: var(--muted);
-  max-width: 520px;
+.hero-text h1{
+  font-size:58px;
+  font-weight:800;
+  background:linear-gradient(90deg, #7C3AED, #EC4899, #06B6D4);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 26px;
-  background: linear-gradient(90deg, #7C3AED, #EC4899);
-  border-radius: 8px;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
-  transition: 0.3s;
+.hero-text p{
+  margin-top:20px;
+  font-size:18px;
+  color:#94A3B8;
+  max-width:520px;
 }
 
-.btn:hover {
-  transform: translateY(-4px);
+/* ===== BUTTON ===== */
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  background:linear-gradient(90deg, #7C3AED, #EC4899);
+  border-radius:8px;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 0 20px rgba(236, 72, 153, 0.4);
+  transition:0.3s;
 }
 
-/* IMAGE */
-.hero-img img {
-  width: 340px;
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(124,58,237,0.3);
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 30px rgba(236, 72, 153, 0.6);
 }
 
-/* CARDS */
-.card {
-  background: var(--surface);
-  padding: 30px;
-  border-radius: 16px;
-  margin-bottom: 25px;
-  transition: 0.4s;
-  border: 1px solid rgba(255,255,255,0.05);
+/* ===== IMAGE ===== */
+.hero-img img{
+  width:340px;
+  border-radius:18px;
+  box-shadow:0 0 40px rgba(124, 58, 237, 0.4);
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(124,58,237,0.2);
+/* ===== SECTION HEADINGS ===== */
+h2{
+  font-size:30px;
+  margin-bottom:30px;
+  color:#F8FAFC;
 }
 
-/* SKILLS */
-.skills span {
-  display: inline-block;
-  padding: 8px 14px;
-  margin: 6px 6px 0 0;
-  border-radius: 20px;
-  font-size: 14px;
-  background: #1E293B;
-  color: var(--muted);
+/* ===== CARDS ===== */
+.card{
+  background:#121826; /* SURFACE COLOR */
+  padding:30px;
+  border-radius:14px;
+  margin-bottom:25px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
 }
 
-/* HEADINGS */
-h2 {
-  font-size: 30px;
-  margin-bottom: 25px;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.card:hover{
+  border:1px solid #7C3AED;
+  box-shadow:0 0 25px rgba(124,58,237,0.2);
+  transform:translateY(-6px);
 }
 
-/* SOCIAL */
-.social-icons a {
-  margin-right: 15px;
-  font-size: 20px;
-  color: var(--muted);
-  transition: 0.3s;
+.card p{
+  color:#94A3B8;
 }
 
-.social-icons a:hover {
-  color: white;
+/* ===== SKILLS ===== */
+.skills span{
+  display:inline-block;
+  padding:8px 14px;
+  margin:6px 6px 0 0;
+  border-radius:20px;
+  font-size:14px;
+  background:#1E293B;
+  color:#94A3B8;
 }
 
-/* ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.8s ease;
+/* ===== SOCIAL ===== */
+.social-icons a{
+  margin-right:15px;
+  font-size:20px;
+  color:#94A3B8;
+  transition:0.3s;
 }
 
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+.social-icons a:hover{
+  color:#EC4899;
 }
 
-footer {
-  text-align: center;
-  padding: 50px 0;
-  color: var(--muted);
+/* ===== ANIMATION ===== */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.8s ease;
 }
 
-/* RESPONSIVE */
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:60px 0;
+  color:#94A3B8;
+}
+
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
   .hero{
-    flex-direction: column;
-    text-align: center;
+    flex-direction:column;
+    text-align:center;
   }
 }
+
 </style>
 </head>
 
 <body>
 
 <nav>
-  <strong style="color:white;">Swetha</strong>
+  <strong>Swetha</strong>
   <div>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -203,8 +216,9 @@ footer {
     <h1>Swetha Samivel</h1>
     <p>
       Social Media Manager helping brands grow through strategy,
-      content creation, and high-performing paid campaigns.
+      creative content, and performance-driven campaigns.
     </p>
+
     <a href="#" class="btn">Download Resume</a>
 
     <div class="social-icons" style="margin-top:20px;">
@@ -223,7 +237,6 @@ footer {
   <div class="card">
     Results-driven Social Media Manager with 2+ years of experience
     increasing engagement by 30% and boosting campaign reach by 50%.
-    Skilled in analytics, strategy, and creative execution.
   </div>
 </section>
 
@@ -232,21 +245,12 @@ footer {
 
   <div class="card">
     <h3>Social Media Manager (Freelance)</h3>
-    <p style="color:var(--muted);">2023 – Present</p>
-    <ul>
-      <li>50% campaign reach increase</li>
-      <li>30% engagement growth</li>
-      <li>Managed multiple brand accounts</li>
-    </ul>
+    <p>2023 – Present</p>
   </div>
 
   <div class="card">
     <h3>Web Developer (Freelance)</h3>
-    <p style="color:var(--muted);">2020 – 2023</p>
-    <ul>
-      <li>Built responsive websites</li>
-      <li>Improved engagement by 25%</li>
-    </ul>
+    <p>2020 – 2023</p>
   </div>
 </section>
 
@@ -264,14 +268,14 @@ footer {
 
 <script>
 const faders = document.querySelectorAll('.fade');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
     }
   });
 });
-faders.forEach(el => observer.observe(el));
+faders.forEach(el=>observer.observe(el));
 </script>
 
 </body>
