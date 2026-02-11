@@ -5,21 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swetha Samivel | Social Media Manager</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 :root {
-  --primary: #2563eb;
+  --primary: #3b82f6;
   --bg: #ffffff;
   --text: #111827;
-  --card: #f3f4f6;
+  --card: rgba(255,255,255,0.6);
   --muted: #6b7280;
 }
 
 body.dark {
   --bg: #0f172a;
   --text: #f1f5f9;
-  --card: #1e293b;
+  --card: rgba(30,41,59,0.6);
   --muted: #94a3b8;
 }
 
@@ -34,7 +35,7 @@ body.dark {
 body {
   background: var(--bg);
   color: var(--text);
-  transition: 0.3s ease;
+  transition: 0.4s ease;
 }
 
 nav {
@@ -42,6 +43,7 @@ nav {
   width: 100%;
   top: 0;
   background: var(--bg);
+  backdrop-filter: blur(10px);
   padding: 20px 60px;
   display: flex;
   justify-content: space-between;
@@ -54,6 +56,11 @@ nav a {
   color: var(--text);
   margin-left: 20px;
   font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
 }
 
 .toggle-btn {
@@ -61,13 +68,13 @@ nav a {
   background: var(--primary);
   border: none;
   color: white;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   margin-left: 20px;
 }
 
 .section {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   padding: 120px 20px 80px;
 }
@@ -75,66 +82,103 @@ nav a {
 .hero {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
 }
 
-.hero h1 {
-  font-size: 52px;
-  font-weight: 700;
+.hero-text h1 {
+  font-size: 54px;
+  font-weight: 800;
 }
 
-.hero span {
+.hero-text span {
   color: var(--primary);
 }
 
-.hero p {
+.hero-text p {
   margin-top: 20px;
   font-size: 18px;
   color: var(--muted);
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .btn {
   display: inline-block;
   margin-top: 30px;
-  padding: 12px 20px;
+  padding: 14px 22px;
   background: var(--primary);
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.hero-img img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 
 .card {
   background: var(--card);
+  backdrop-filter: blur(12px);
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 15px;
   margin-bottom: 20px;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
 .skills span {
   display: inline-block;
-  background: var(--card);
+  background: var(--primary);
+  color: white;
   padding: 8px 14px;
   margin: 6px 6px 0 0;
   border-radius: 20px;
   font-size: 14px;
 }
 
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stat h3 {
+  font-size: 36px;
+  color: var(--primary);
+}
+
+.stat p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 20px;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--primary);
+}
+
 .fade {
   opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
+  transform: translateY(30px);
+  transition: 0.8s ease;
 }
 
 .fade.show {
@@ -147,6 +191,13 @@ footer {
   padding: 40px 0;
   color: var(--muted);
 }
+
+@media(max-width:900px){
+  .hero{
+    flex-direction: column;
+    text-align: center;
+  }
+}
 </style>
 </head>
 
@@ -157,28 +208,48 @@ footer {
   <div>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
     <button class="toggle-btn" onclick="toggleMode()">Dark</button>
   </div>
 </nav>
 
 <section class="section hero">
-  <h1>Hi, I'm <span>Swetha Samivel</span></h1>
-  <p>
-    Social Media Manager helping brands grow through strategic content, paid advertising,
-    and performance-driven campaigns.
-  </p>
-  <a href="#" class="btn">Download Resume</a>
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Swetha</span></h1>
+    <p>
+      Social Media Manager helping brands grow through strategic content,
+      paid advertising, and performance-driven campaigns.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <h3>50%+</h3>
+        <p>Campaign Reach Growth</p>
+      </div>
+      <div class="stat">
+        <h3>30%</h3>
+        <p>Engagement Increase</p>
+      </div>
+    </div>
+
+    <a href="#" class="btn">Download Resume</a>
+
+    <div class="social-icons" style="margin-top:20px;">
+      <a href="https://www.linkedin.com/in/swetha-samivel" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:swethasamivel@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="profile.jpg" alt="Swetha Samivel">
+  </div>
 </section>
 
 <section class="section fade" id="about">
   <h2>About Me</h2>
-  <p>
-    Results-driven Social Media Manager with 2+ years of freelance experience delivering
-    measurable growth for B2C and service brands. I specialize in content planning,
-    analytics, and paid media optimization.
-  </p>
+  <div class="card">
+    Results-driven Social Media Manager with 2+ years of freelance experience delivering measurable growth for B2C and service brands. Skilled in strategy, paid ads, analytics, and content creation.
+  </div>
 </section>
 
 <section class="section fade" id="experience">
@@ -186,52 +257,28 @@ footer {
 
   <div class="card">
     <h3>Social Media Manager (Freelance)</h3>
-    <p>Nov 2023 – Present | Chennai</p>
+    <p>Nov 2023 – Present</p>
     <ul>
-      <li>Increased campaign reach by 50%</li>
+      <li>Boosted campaign reach by 50%</li>
       <li>Improved engagement by 30%</li>
       <li>Managed multiple B2C & service accounts</li>
-      <li>Delivered monthly analytics reports</li>
     </ul>
   </div>
 
   <div class="card">
     <h3>Web Developer (Freelance)</h3>
-    <p>Nov 2020 – May 2023 | Chennai</p>
+    <p>Nov 2020 – May 2023</p>
     <ul>
-      <li>Developed 3 responsive websites</li>
-      <li>Boosted social engagement by 25%</li>
-      <li>Designed brand-aligned creatives</li>
+      <li>Developed responsive websites</li>
+      <li>Increased engagement by 25%</li>
     </ul>
-  </div>
-</section>
-
-<section class="section fade" id="skills">
-  <h2>Skills</h2>
-
-  <div class="skills">
-    <span>Social Media Strategy</span>
-    <span>Content Planning</span>
-    <span>Paid Advertising</span>
-    <span>Analytics</span>
-    <span>Meta Business Suite</span>
-    <span>Canva</span>
-    <span>HubSpot</span>
-    <span>CapCut</span>
-    <span>HTML</span>
-    <span>CSS</span>
   </div>
 </section>
 
 <section class="section fade" id="contact">
   <h2>Contact</h2>
   <p>Email: swethasamivel@gmail.com</p>
-  <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/swetha-samivel" target="_blank">
-      linkedin.com/in/swetha-samivel
-    </a>
-  </p>
+  <p>LinkedIn: linkedin.com/in/swetha-samivel</p>
 </section>
 
 <footer>
