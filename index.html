@@ -9,183 +9,178 @@
 
 <style>
 :root {
-  --primary: #1e3a8a;
-  --bg: #ffffff;
-  --text: #111827;
-  --card: #f3f4f6;
-}
-
-body.dark {
-  --bg: #0f172a;
-  --text: #f1f5f9;
-  --card: #1e293b;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  --primary: #1e40af;
+  --light: #ffffff;
+  --dark-bg: #0a0f25;
+  --text-light: #e0e7ff;
+  --text-dark: #111827;
+  --section-bg: #f9fafb;
+  --card-bg: #ffffff;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--light);
+  color: var(--text-dark);
   transition: 0.3s ease;
-  line-height: 1.6;
 }
 
-.container {
+body.dark {
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--primary);
+  color: white;
+}
+
+header h1 {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.section {
+  padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
-  padding: 40px 20px;
-}
-
-h1, h2 {
-  margin-bottom: 15px;
-}
-
-h1 {
-  font-size: 36px;
 }
 
 h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
   color: var(--primary);
-  margin-top: 40px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 18px;
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 15px;
+p {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .card {
-  background: var(--card);
+  background: var(--card-bg);
   padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
 }
 
 .skills span {
   display: inline-block;
-  background: var(--card);
-  padding: 8px 12px;
-  margin: 6px 6px 0 0;
-  border-radius: 20px;
-  font-size: 14px;
-}
-
-.toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 5px;
   background: var(--primary);
   color: white;
-  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin: 6px 6px 0 0;
+  font-size: 14px;
 }
 
 footer {
   text-align: center;
-  margin-top: 40px;
   font-size: 14px;
-  opacity: 0.7;
+  margin: 40px 0;
+  opacity: 0.6;
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<button class="toggle" onclick="toggleMode()">Dark Mode</button>
+<button class="toggle-btn" onclick="toggleMode()">Dark Mode</button>
 
-<div class="container">
+<header>
+  <h1>Swetha Samivel</h1>
+  <p>Social Media Manager | Content Strategist</p>
+  <p>Chennai, India</p>
+</header>
 
-<h1>Swetha Samivel</h1>
-<p><strong>Social Media Manager | Content Strategist</strong></p>
-<p>Chennai, India | swethasamivel@gmail.com</p>
-
-<a href="#" class="btn">Download Resume</a>
-
-<h2>Professional Summary</h2>
-<p>
-Results-driven Social Media Manager with 2+ years of freelance experience delivering measurable growth for B2C and service brands. Skilled in social media strategy, content planning, paid advertising, and analytics-driven optimization.
-</p>
-
-<h2>Experience</h2>
-
-<div class="card">
-<h3>Social Media Manager (Freelance)</h3>
-<p>Nov 2023 – Present | Chennai</p>
-<ul>
-<li>Managed multiple B2C and service-based client accounts</li>
-<li>Increased campaign reach by 50%</li>
-<li>Improved engagement rates by 30%</li>
-<li>Created high-performing posts, reels, and creatives</li>
-<li>Delivered performance reports and optimized strategies</li>
-</ul>
+<div class="section" id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a results-driven Social Media Manager with 2+ years of freelance experience helping B2C and service-based brands grow engagement, visibility, and campaign performance through strategic content planning, analytics, and paid media optimization.
+  </p>
 </div>
 
-<div class="card">
-<h3>Web Developer (Freelance)</h3>
-<p>Nov 2020 – May 2023 | Chennai</p>
-<ul>
-<li>Developed 3 responsive websites using HTML & CSS</li>
-<li>Increased engagement by 25% across managed accounts</li>
-<li>Designed promotional creatives aligned with brand guidelines</li>
-</ul>
+<div class="section" id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <h3>Social Media Manager (Freelance)</h3>
+    <p>Nov 2023 – Present | Chennai</p>
+    <ul>
+      <li>Managed social accounts for multiple clients in B2C & services</li>
+      <li>Boosted campaign reach by 50% through targeted strategy</li>
+      <li>Improved engagement by 30% via content optimization</li>
+      <li>Planned posts, reels, and creatives with strong branding</li>
+      <li>Delivered performance reports & optimized actions</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Web Developer (Freelance)</h3>
+    <p>Nov 2020 – May 2023 | Chennai</p>
+    <ul>
+      <li>Built responsive websites with HTML & CSS</li>
+      <li>Designed promotional graphics aligned with brand tones</li>
+      <li>Increased social engagement by 25% for clients</li>
+    </ul>
+  </div>
 </div>
 
-<h2>Key Achievements</h2>
+<div class="section" id="skills">
+  <h2>Skills & Tools</h2>
 
-<div class="card">
-📈 30% Increase in Engagement Across Client Accounts
+  <div class="skills">
+    <span>Social Media Strategy</span>
+    <span>Content Planning</span>
+    <span>Paid Advertising</span>
+    <span>Analytics & Reporting</span>
+    <span>Meta Business Suite</span>
+    <span>Canva</span>
+    <span>HubSpot</span>
+    <span>CapCut</span>
+    <span>HTML</span>
+    <span>CSS</span>
+  </div>
 </div>
 
-<div class="card">
-🚀 50% Boost in Campaign Reach Through Paid Advertising
+<div class="section" id="achievements">
+  <h2>Key Achievements</h2>
+
+  <div class="card">📈 30% engagement increase across client accounts</div>
+  <div class="card">🚀 50% boost in campaign reach with paid media</div>
+  <div class="card">📊 Managed multiple accounts with consistent growth</div>
 </div>
 
-<div class="card">
-📊 Managed Multiple Accounts with Consistent Growth
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: <strong>swethasamivel@gmail.com</strong></p>
+  <p>LinkedIn: <strong><a href="https://www.linkedin.com/in/swetha-samivel" target="_blank">linkedin.com/in/swetha-samivel</a></strong></p>
 </div>
 
-<h2>Skills</h2>
-
-<div class="skills">
-<span>Social Media Strategy</span>
-<span>Content Planning</span>
-<span>Paid Advertising</span>
-<span>Analytics & Reporting</span>
-<span>Meta Business Suite</span>
-<span>Canva</span>
-<span>HubSpot</span>
-<span>CapCut</span>
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-</div>
-
-<h2>Education</h2>
-<p>B.E Computer Science & Engineering<br>
-Gojan School of Business and Technology<br>
-CGPA: 7.6</p>
-
-<h2>Contact</h2>
-<p>Email: swethasamivel@gmail.com</p>
-<p>LinkedIn: www.linkedin.com/in/swetha-samivel</p>
-
-<footer>
-© 2026 Swetha Samivel | Social Media Manager
-</footer>
-
-</div>
+<footer>© 2026 Swetha Samivel</footer>
 
 <script>
 function toggleMode() {
